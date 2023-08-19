@@ -11,10 +11,6 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
-
-export function httpTranlateLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http)
-}
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +25,10 @@ export function httpTranlateLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
+      defaultLanguage: 'ar',
       loader: {
         provide: TranslateLoader,
-        useFactory: httpTranlateLoaderFactory,
+        useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
     }),
@@ -40,3 +37,6 @@ export function httpTranlateLoaderFactory(http: HttpClient) {
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http)
+}
