@@ -4,6 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "addToCart": {
+
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -23,11 +24,13 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
+            
             "production": {
               "budgets": [
                 {
@@ -90,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

@@ -1,11 +1,12 @@
-<header class="header  dark:bg-slate-800">
+<header class="header  dark:bg-slate-800" [dir]="'dir' | translate">
     <div class=" container mx-auto flex justify-between items-center h-full">
         <div class="logo font-semibold text-xl dark:text-white">Shopwise.</div>
         <div class="list-menu">
-            <ul class="dark:text-white flex space-x-8">
+            <ul class="dark:text-white flex items-center space-x-8">
                 <li>
                     <div class="dropdown dropdown-hover">
-                        <label class="my-2 uppercase cursor-pointer flex space-x-2" tabindex="0"><span>home</span>
+                        <label class="my-2 uppercase cursor-pointer flex space-x-2" tabindex="0"><span>{{'header.home' |
+                                translate}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -20,7 +21,8 @@
                 </li>
                 <li>
                     <div class="dropdown dropdown-hover">
-                        <label class="my-2 uppercase cursor-pointer flex space-x-2" tabindex="0"><span>pages</span>
+                        <label class="my-2 uppercase cursor-pointer flex space-x-2" tabindex="0"><span>{{'header.pages'
+                                | translate}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -35,7 +37,8 @@
                 </li>
                 <li>
                     <div class="dropdown dropdown-hover">
-                        <label class="my-2 uppercase cursor-pointer flex space-x-2" tabindex="0"><span>products</span>
+                        <label class="my-2 uppercase cursor-pointer flex space-x-2"
+                            tabindex="0"><span>{{'header.products' | translate}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -50,7 +53,8 @@
                 </li>
                 <li>
                     <div class="dropdown dropdown-hover">
-                        <label class="my-2 uppercase cursor-pointer flex space-x-2" tabindex="0"><span>blog</span>
+                        <label class="my-2 uppercase cursor-pointer flex space-x-2" tabindex="0"><span>{{'header.blog' |
+                                translate}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -65,7 +69,8 @@
                 </li>
                 <li>
                     <div class="dropdown dropdown-hover">
-                        <label class="my-2 uppercase cursor-pointer flex space-x-2" tabindex="0"><span>shop</span>
+                        <label class="my-2 uppercase cursor-pointer flex space-x-2" tabindex="0"><span>{{'header.shop' |
+                                translate}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -80,7 +85,8 @@
                 </li>
                 <li>
                     <div class="dropdown dropdown-hover">
-                        <label class="my-2 uppercase cursor-pointer flex space-x-2" tabindex="0"><span>contact us</span>
+                        <label class="my-2 uppercase cursor-pointer flex space-x-2"
+                            tabindex="0"><span>{{'header.contactus' | translate}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -136,6 +142,28 @@
 
                 </li>
                 <div class="divider divider-vertical mx-0 h-10"></div>
+
+                <li>
+                    <div class="mt-4 w-32">
+                        <mat-form-field class="h-full w-full mt-1 " appearance="fill">
+                            <mat-label class="dark:bg-slate-700">
+                                <div class="flex">
+
+                                </div>
+                            </mat-label>
+                            <mat-select (selectionChange)="translate(selectedLang)" [(ngModel)]="selectedLang">
+                                <mat-option *ngFor="let lang of languages " [value]="lang.country">
+                                    <div class="flex">
+                                        <div class="country-flag"><img class="h-8 w-8" [src]='lang.flagPath'
+                                                alt="flag logo"></div>
+                                        <div class="country-code ml-6">{{lang.country}}</div>
+                                    </div>
+
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </li>
 
             </ul>
         </div>

@@ -7,10 +7,12 @@ import { HomeComponent } from './pages/home/home.component'
 import { CartComponent } from './pages/cart/cart.component'
 import { SaleComponent } from './pages/sale/sale.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
-import { ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
+import { MaterialModule } from './shared/material/material.module'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,13 +24,16 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
+    MaterialModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'ar',
+      defaultLanguage: 'En',
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
+        useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
     }),
@@ -37,6 +42,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader'
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http)
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json')
 }

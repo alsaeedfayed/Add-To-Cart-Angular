@@ -1,0 +1,11 @@
+{
+    "dir" : "ltr" ,
+    "header" : {
+         "home" : "home",
+         "pages" : "pages",
+         "products" : "products",
+         "blog" : "blog",
+         "shop" : "shop",
+         "contactus" : "contact us"
+    }
+}
