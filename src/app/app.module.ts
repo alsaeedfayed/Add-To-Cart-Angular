@@ -13,7 +13,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { MaterialModule } from './shared/material/material.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { NavHeaderComponent } from './components/nav-header/nav-header.component';
+import { NavHeaderComponent } from './components/nav-header/nav-header.component'
 import { BestOffersComponent } from './components/best-offers/best-offers.component'
 
 @NgModule({

@@ -1,0 +1,30 @@
+.card {
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+.grid .card .viewDetails {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    transition: transform .2s ease;
+    transition-delay: 0;
+    transform: translateX(20px);
+    z-index: -1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+
+}
+
+
+.grid .card:hover .viewDetails {
+   transform: translateX(-18px);
+   z-index: 1;
+}
+
+
+
+
+/* .card .viewDetails{
+    right: 0rem;
+    transition: transform .5s ease;
+} */

@@ -9,11 +9,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class AppComponent implements OnInit {
   constructor(private darkMode: DarkModeService, private http: HttpClient) {}
-  ngOnInit(): void {
-    this.http.get('https://dummyjson.com/products/5').subscribe((res: any) => {
-      console.log(res)
-    })
-  }
+  ngOnInit(): void {}
   title = 'addToCart'
   currentMode!: boolean
 

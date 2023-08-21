@@ -1,1 +1,71 @@
-<p>best-offers works!</p>
+<div class="best-offer-wrapper mt-16">
+    <div class="container mx-auto">
+        <div class="header flex items-center justify-between">
+            <h1 class="font-bold text-8xl dark:text-white">The best offers</h1>
+            <button
+                class="btn-arrow-right-info flex dark:bg-slate-800 dark:text-white dark:hover:bg-slate-900 transition-all space-x-1 items-center"><span>More
+                    Products</span> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+        </div>
+
+        <div
+            class="grid md:grid  md:grid-cols-2 justify-items-center grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 items-center justify-center gap-4 mt-6">
+            <div *ngFor="let cardProduct of FeaturedProducts ; let i = index"
+                class="card hover:scale-105 delay-75 transition-transform bg-white  dark:bg-slate-800 h-auto w-full flex flex-col justify-center items-start p-4">
+
+                <!-- Badges -->
+                <div class="product_badges flex flex-col gap-2">
+                    <button class="btn-badge-primary">{{cardProduct.discountPercentage}}</button>
+                    <button class="btn-badge-danger">HOT</button>
+                </div>
+
+                <!-- Gallery -->
+                <div class="product-gallery h-60 flex justify-center items-center w-full">
+                    <img class="h-full" [src]="cardProduct.images[0]" alt="">
+                </div>
+
+                <!-- Product Details -->
+                <div class="product-details mt-4 flex gap-1 w-full flex-col">
+                    <h1>{{cardProduct.title}}</h1>
+                    <span class="text-gray-400">{{cardProduct.brand}}</span>
+                    <span>rate</span>
+                    <div class="flex gap-2">
+                        <span>{{cardProduct.stock}}</span> <span>in stock</span>
+                    </div>
+                    <span class="-text--wd-primary-color">{{cardProduct.price}} $</span>
+
+                    <button class="btn-primary w-full mt-3">add to car</button>
+                </div>
+
+                <!-- Show On Hover -->
+                <div class="viewDetails  dark:bg-slate-600  bg-gray-100 rounded-md  w-12 h-32">
+                    <div class="flex flex-col justify-center items-center w-full h-full gap-3">
+                        <span class="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6 dark:text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </span>
+
+                        <span class="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6 dark:text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg>
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

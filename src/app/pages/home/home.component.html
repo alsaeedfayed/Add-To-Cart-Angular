@@ -2,9 +2,10 @@
     <div class="container mx-auto">
         <div class=" swipperRowConainer lg:flex gap:2">
             <div class="w-full lg:w-1/2">
-                <swiper-container class="cursor-move rounded-md" autoHeight="true" pagination="true"
-                    pagination-dynamic-bullets="true" center-slide="true" pagination-clickable="true" init="true"
-                    w-full>
+                <swiper-container class="cursor-move rounded-md" effect="slide" autoplay-delay="5000" loop="true"
+                    autoplay-disable-on-interaction="false" autoplay-reverse-direction="true" allow-touch-move="true"
+                    autoHeight="true" pagination="true" pagination-dynamic-bullets="true" center-slide="true"
+                    pagination-clickable="true" init="true" w-full>
                     <swiper-slide style="position: relative;">
                         <div class="w-full flex flex-col justify-start mt-4  items-center h-full absolute">
                             <h1 class="capitalize font-semibold text-white text-12xl">Apple shopping event</h1>
@@ -71,5 +72,9 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="best-offers">
+        <app-best-offers></app-best-offers>
     </div>
 </div>
