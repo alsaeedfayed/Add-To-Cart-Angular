@@ -1,0 +1,30 @@
+.slider_main{
+    background: url('../../../assets/images/apple-shopping-event.jpg');
+    background-size: cover;
+}
+.aurora{
+    background-image: url('../../../assets/images/logitech-aurora-headset.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50%;
+}
+.deal {
+    height: 50%;
+}
+
+.deal .playstation{
+    background-image: url('../../../assets/images/new-dualsense.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.deal .camera{
+    background-image: url('../../../assets/images/instant-cameras.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.swipperRowConainer{
+    height:28.7rem ;
+}

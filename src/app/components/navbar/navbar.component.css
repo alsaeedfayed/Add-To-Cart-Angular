@@ -15,3 +15,14 @@
    
     
 }
+
+ul li label {
+    font-size: 1.1rem;
+    padding: 0rem;
+    margin: 1rem;
+
+}
+
+.langSelect .mat-mdc-form-field{
+    text-align: left;
+}
